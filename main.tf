@@ -46,4 +46,23 @@ resource "zstack_instance" "esxi" {
     }
 }
 
+resource "null_resource" "check_esxi_http_ready" {
+  depends_on = [zstack_instance.esxi]
 
+  provisioner "local-exec" {
+    command = <<EOT
+      for i in {1..10}; do
+        if curl -s --connect-timeout 2 http://${zstack_instance.esxi.vm_nics[0].ip} > /dev/null; then
+          echo "ESXi instance is reachable"
+          exit 0
+        else
+          echo "Waiting for ESXi instance to be reachable..."
+          sleep 5
+        fi
+      done
+      echo "Timeout: ESXi instance not reachable via HTTP"
+      exit 1
+    EOT
+    interpreter = ["/bin/bash", "-c"]
+  }
+}

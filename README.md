@@ -10,6 +10,7 @@
 
 | Name | Version |
 |------|---------|
+| <a name="provider_null"></a> [null](#provider\_null) | n/a |
 | <a name="provider_zstack"></a> [zstack](#provider\_zstack) | 1.0.5 |
 
 ## Modules
@@ -22,6 +23,7 @@
 
 | Name | Type |
 |------|------|
+| [null_resource.check_esxi_http_ready](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) | resource |
 | [zstack_instance.esxi](https://registry.terraform.io/providers/ZStack-Robot/zstack/1.0.5/docs/resources/instance) | resource |
 | [zstack_instance_offers.offers](https://registry.terraform.io/providers/ZStack-Robot/zstack/1.0.5/docs/data-sources/instance_offers) | data source |
 | [zstack_l3networks.l3networks](https://registry.terraform.io/providers/ZStack-Robot/zstack/1.0.5/docs/data-sources/l3networks) | data source |
