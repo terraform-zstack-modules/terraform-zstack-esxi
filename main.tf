@@ -2,12 +2,12 @@ locals {
   context = var.context
 }
 
-module "esxi_builder_image" {
+module "esxi_image" {
   source = "git::http://172.20.14.17/jiajian.chi/terraform-zstack-image.git"
 
   create_image        = true
-  image_name          = var.image_name
-  image_url           = var.image_url
+  image_name          = var.esxi_image_name
+  image_url           = var.esxi_iso_url
   guest_os_type      = "Other"
   platform           = "Other"
   format             = "iso"

@@ -16,7 +16,7 @@
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_esxi_builder_image"></a> [esxi\_builder\_image](#module\_esxi\_builder\_image) | git::http://172.20.14.17/jiajian.chi/terraform-zstack-image.git | n/a |
+| <a name="module_esxi_image"></a> [esxi\_image](#module\_esxi\_image) | git::http://172.20.14.17/jiajian.chi/terraform-zstack-image.git | n/a |
 
 ## Resources
 
