@@ -1,10 +1,103 @@
 openapi: 3.0.3
 info:
-  title: OpenAPI schema for template walrus-template-template
+  title: OpenAPI schema for template .
 components:
   schemas:
     variables:
       type: object
+      required:
+      - esxi_image_name
+      - esxi_iso_url
+      - instance_name
+      properties:
+        esxi_image_name:
+          title: Esxi Image Name
+          type: string
+          description: The name of the ESXi image to be created
+          x-walrus-ui:
+            group: Basic
+            order: 2
+        esxi_iso_url:
+          title: Esxi Iso Url
+          type: string
+          description: The URL of the ESXi ISO image
+          x-walrus-ui:
+            group: Basic
+            order: 3
+        backup_storage_name:
+          title: Backup Storage Name
+          type: string
+          description: Name of the backup storage where the image will be stored
+          default: bs
+          x-walrus-ui:
+            group: Basic
+            order: 4
+        l3_network_name:
+          title: L3 Network Name
+          type: string
+          description: Name of the L3 network to attach the instance
+          default: test
+          x-walrus-ui:
+            group: Basic
+            order: 5
+        l3_network_uuids:
+          title: L3 Network Uuids
+          type: array
+          description: UUIDs of L3 networks (used if l3_network_name is not provided)
+          default: []
+          items:
+            type: string
+          x-walrus-ui:
+            colSpan: 12
+            group: Basic
+            order: 6
+        instance_offering_name:
+          title: Instance Offering Name
+          type: string
+          description: Name of the instance offering
+          default: min
+          x-walrus-ui:
+            group: Basic
+            order: 7
+        instance_offering_uuid:
+          title: Instance Offering Uuid
+          type: string
+          description: UUID of the instance offering (used if name is not provided)
+          default: ""
+          x-walrus-ui:
+            group: Basic
+            order: 8
+        instance_name:
+          title: Instance Name
+          type: string
+          description: Name of the instance to be created
+          x-walrus-ui:
+            group: Basic
+            order: 9
+        description:
+          title: Description
+          type: string
+          description: Description of the instance
+          default: ""
+          x-walrus-ui:
+            group: Basic
+            order: 10
+        never_stop:
+          title: Never Stop
+          type: boolean
+          description: Whether the instance should never stop
+          default: true
+          x-walrus-ui:
+            group: Basic
+            order: 11
+        root_disk_size:
+          title: Root Disk Size
+          type: number
+          description: Size of the root disk in GB
+          default: 100
+          x-walrus-ui:
+            group: Basic
+            order: 12
       x-walrus-ui:
         groupOrder:
         - Basic

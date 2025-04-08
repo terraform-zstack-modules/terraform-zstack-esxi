@@ -32,11 +32,12 @@ output "walrus_resource_id" {
   description = "The id of resource where deployed in Walrus."
 }
 
-#
-# Submodule output
-#
+output "esxi_instance_ip" {
+  description = "IP of the created ESXi instance"
+  value       = zstack_instance.esxi.vm_nics[0].ip
+}
 
-output "submodule" {
-  value       = module.submodule.message
-  description = "The message from submodule."
+output "esxi_endpoint" {
+  description = "List of IPs of the created ESXi instance"
+  value       = "http://${zstack_instance.esxi.vm_nics[0].ip}"
 }
