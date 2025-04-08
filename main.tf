@@ -2,10 +2,6 @@ locals {
   context = var.context
 }
 
-locals {
-  context = var.context
-}
-
 module "esxi_builder_image" {
   source = "git::http://172.20.14.17/jiajian.chi/terraform-zstack-image.git"
 
