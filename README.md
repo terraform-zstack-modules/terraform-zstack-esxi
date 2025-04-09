@@ -58,3 +58,10 @@
 | <a name="output_walrus_resource_id"></a> [walrus\_resource\_id](#output\_walrus\_resource\_id) | The id of resource where deployed in Walrus. |
 | <a name="output_walrus_resource_name"></a> [walrus\_resource\_name](#output\_walrus\_resource\_name) | The name of resource where deployed in Walrus. |
 <!-- END_TF_DOCS -->
+
+## ESXI
+- 6.5版本可用构建好的ISO镜像，链接： http://minio.zstack.io:9000/packer/esxi-6.5.0-ks.iso
+- 其他版本请通过 http://172.20.14.17/jiajian.chi/terraform-zstack-esxibuilder.git 进行构建，把repo加到模板去构建
+    - 构建请配置esxi_iso_url，例如 http://192.168.200.100/mirror/iso/vmware/VMware_iso/VMware-VMvisor-Installer-6.5.0.update01-5969303.x86_64.iso
+    - 构建需配置 esxi_iso_filename 这个文件名来自 wget ${esxi_iso_url}
+    - 其他ESXI的基础镜像请从http://192.168.200.100/mirror/iso/vmware/VMware_iso/ 查找
