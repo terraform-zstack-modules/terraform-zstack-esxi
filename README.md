@@ -61,5 +61,6 @@
 
 ## ESXI
 - 6.5版本可用构建好的ISO镜像，链接： http://minio.zstack.io:9000/packer/esxi-6.5.0-ks.iso
+- 6.7版本可用构建好的ISO镜像，链接： http://minio.zstack.io:9000/packer/esxi-6.7.0-ks.iso
 - 其他版本请通过 http://172.20.14.17/jiajian.chi/terraform-zstack-esxibuilder.git 进行构建，把repo加到模板去构建
 - 此处的esxi_iso_url变量为esxibuilder仓库所build出来的iso镜像，会自动化安装。 原始基础镜像无法使用
