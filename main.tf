@@ -3,7 +3,7 @@ locals {
 }
 
 module "esxi_image" {
-  source = "git::http://172.20.14.17/jiajian.chi/terraform-zstack-image.git"
+  source = "git::http://172.20.14.17/jiajian.chi/terraform-zstack-image.git?ref=v1.1.1"
 
   create_image        = true
   image_name          = var.esxi_image_name
@@ -12,6 +12,7 @@ module "esxi_image" {
   platform           = "Other"
   format             = "iso"
   architecture       = "x86_64"
+  expunge            = var.expunge
 
   backup_storage_name = var.backup_storage_name
 }
@@ -44,4 +45,5 @@ resource "zstack_instance" "esxi" {
     root_disk         =  {
         size = var.root_disk_size
     }
+    expunge            = var.expunge
 }

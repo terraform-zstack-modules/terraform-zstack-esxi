@@ -41,3 +41,13 @@ output "esxi_endpoint" {
   description = "List of IPs of the created ESXi instance"
   value       = "http://${zstack_instance.esxi.vm_nics[0].ip}"
 }
+
+output "esxi_password" {
+  value       = "默认密码为ZStack@123"
+}
+
+output "endpoints" {
+  value = {
+    esxi_endpoint = "http://${zstack_instance.esxi.vm_nics[0].ip}"
+  }
+}

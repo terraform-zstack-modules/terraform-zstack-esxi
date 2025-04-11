@@ -86,3 +86,9 @@ variable "root_disk_size" {
   description = "Size of the root disk in GB"
   default     = 100
 }
+
+variable "expunge" {
+  type  = bool
+  default = true
+}
+

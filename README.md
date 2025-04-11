@@ -59,7 +59,8 @@
 | <a name="output_walrus_resource_name"></a> [walrus\_resource\_name](#output\_walrus\_resource\_name) | The name of resource where deployed in Walrus. |
 <!-- END_TF_DOCS -->
 
-## ESXI
+## ESXI注意事项
+- 仅支持6.5,6.7无人值守安装，安装预计20分钟以上，喝杯咖啡30分钟后再点部署完成的url
 - 6.5版本可用构建好的ISO镜像，链接： http://minio.zstack.io:9000/packer/esxi-6.5.0-ks.iso
 - 6.7版本可用构建好的ISO镜像，链接： http://minio.zstack.io:9000/packer/esxi-6.7.0-ks.iso
 - 其他版本请通过 http://172.20.14.17/jiajian.chi/terraform-zstack-esxibuilder.git 进行构建，把repo加到模板去构建
