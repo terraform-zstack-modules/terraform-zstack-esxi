@@ -10,18 +10,20 @@
 
 | Name | Version |
 |------|---------|
+| <a name="provider_null"></a> [null](#provider\_null) | n/a |
 | <a name="provider_zstack"></a> [zstack](#provider\_zstack) | 1.0.5 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_esxi_builder_image"></a> [esxi\_builder\_image](#module\_esxi\_builder\_image) | git::http://172.20.14.17/jiajian.chi/terraform-zstack-image.git | n/a |
+| <a name="module_esxi_image"></a> [esxi\_image](#module\_esxi\_image) | git::http://172.20.14.17/jiajian.chi/terraform-zstack-image.git | n/a |
 
 ## Resources
 
 | Name | Type |
 |------|------|
+| [null_resource.check_esxi_http_ready](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) | resource |
 | [zstack_instance.esxi](https://registry.terraform.io/providers/ZStack-Robot/zstack/1.0.5/docs/resources/instance) | resource |
 | [zstack_instance_offers.offers](https://registry.terraform.io/providers/ZStack-Robot/zstack/1.0.5/docs/data-sources/instance_offers) | data source |
 | [zstack_l3networks.l3networks](https://registry.terraform.io/providers/ZStack-Robot/zstack/1.0.5/docs/data-sources/l3networks) | data source |
@@ -56,3 +58,10 @@
 | <a name="output_walrus_resource_id"></a> [walrus\_resource\_id](#output\_walrus\_resource\_id) | The id of resource where deployed in Walrus. |
 | <a name="output_walrus_resource_name"></a> [walrus\_resource\_name](#output\_walrus\_resource\_name) | The name of resource where deployed in Walrus. |
 <!-- END_TF_DOCS -->
+
+## ESXI注意事项
+- 仅支持6.5,6.7无人值守安装，安装预计20分钟以上，喝杯咖啡30分钟后再点部署完成的url
+- 6.5版本可用构建好的ISO镜像，链接： http://minio.zstack.io:9000/packer/esxi-6.5.0-ks.iso
+- 6.7版本可用构建好的ISO镜像，链接： http://minio.zstack.io:9000/packer/esxi-6.7.0-ks.iso
+- 其他版本请通过 http://172.20.14.17/jiajian.chi/terraform-zstack-esxibuilder.git 进行构建，把repo加到模板去构建
+- 此处的esxi_iso_url变量为esxibuilder仓库所build出来的iso镜像，会自动化安装。 原始基础镜像无法使用
