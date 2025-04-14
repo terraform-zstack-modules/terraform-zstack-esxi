@@ -3,7 +3,7 @@ locals {
 }
 
 module "esxi_image" {
-  source = "git::http://172.20.14.17/jiajian.chi/terraform-zstack-image.git?ref=v1.1.1"
+  source = "git::https://github.com/terraform-zstack-modules/terraform-zstack-image.git"
 
   create_image        = true
   image_name          = var.esxi_image_name
